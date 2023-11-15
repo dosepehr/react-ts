@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 import TodoList from './TodoList';
 import { Todo } from './Todos.types';
+
 function App() {
-    const todos: Todo[] = [
+    const [todos, setTodos] = useState<Todo[]>([
         {
             id: 1,
             title: 'ts',
@@ -18,7 +20,7 @@ function App() {
             title: 'css',
             color: 'yellow',
         },
-    ];
+    ]);
 
     return <TodoList todos={todos} />;
 }
