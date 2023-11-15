@@ -3,8 +3,8 @@ import './App.css';
 import TodoList from './TodoList';
 import { Todo } from './Todos.types';
 import Counter from './Counter';
-import { ThemeContextProvider } from './context/ThemeContext';
-import { AuthContextProvider } from './context/AuthContext';
+import { ThemeContextProvider } from '../context/ThemeContext';
+import { AuthContextProvider } from '../context/AuthContext';
 import Header from './Header';
 
 function App() {
