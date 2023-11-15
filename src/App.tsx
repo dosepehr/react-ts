@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import TodoList from './TodoList';
 import { Todo } from './Todos.types';
 import Counter from './Counter';
 import { ThemeContextProvider } from './context/ThemeContext';
+import { AuthContextProvider } from './context/AuthContext';
+import Header from './Header';
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>([
@@ -23,13 +25,15 @@ function App() {
             color: 'yellow',
         },
     ]);
-
     return (
         <>
-            <ThemeContextProvider>
-                <TodoList todos={todos} />
-                <Counter />
-            </ThemeContextProvider>
+            <AuthContextProvider>
+                <ThemeContextProvider>
+                    <Header />
+                    <TodoList todos={todos} />
+                    <Counter />
+                </ThemeContextProvider>
+            </AuthContextProvider>
         </>
     );
 }
