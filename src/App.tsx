@@ -7,6 +7,7 @@ import { ThemeContextProvider } from './context/ThemeContext';
 import { AuthContextProvider } from './context/AuthContext';
 import Header from './Components/Header';
 import Icon from './Components/Icon';
+import Translate from './Components/translate/Translate';
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>([
@@ -30,10 +31,11 @@ function App() {
         <>
             <AuthContextProvider>
                 <ThemeContextProvider>
-                    {/* <Header />
-                    <TodoList todos={todos} />
-                    <Counter /> */}
-                    <Icon children='test Icon' png />
+                    {/* <Header /> */}
+                    {/* <TodoList todos={todos} /> */}
+                    {/* <Counter /> */}
+                    <Icon children='test Icon' position='center' png />
+                    {/* <Translate res='notif-es' /> */}
                 </ThemeContextProvider>
             </AuthContextProvider>
         </>

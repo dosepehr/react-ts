@@ -5,6 +5,7 @@ const Icon: React.FC<React.PropsWithChildren<IconType>> = ({
     children,
     svg,
     png,
+    position,
 }) => {
     return <div>{children}</div>;
 };
