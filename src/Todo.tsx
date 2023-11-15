@@ -7,12 +7,15 @@ const Todo: React.FC<React.PropsWithChildren<TodoType>> = ({
     title,
     children,
 }) => {
+    const clickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        console.log(e.target);
+    };
     const styles: React.CSSProperties = {
         color,
         fontSize: '3.5rem',
     };
     return (
-        <div style={styles}>
+        <div style={styles} onClick={clickHandler}>
             {id} : {title}
         </div>
     );
