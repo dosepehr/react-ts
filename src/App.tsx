@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import TodoList from './TodoList';
 import { Todo } from './Todos.types';
+import Counter from './Counter';
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>([
@@ -22,7 +23,12 @@ function App() {
         },
     ]);
 
-    return <TodoList todos={todos} />;
+    return (
+        <>
+            <TodoList todos={todos} />
+            <Counter />
+        </>
+    );
 }
 
 export default App;
