@@ -3,6 +3,7 @@ import './App.css';
 import TodoList from './TodoList';
 import { Todo } from './Todos.types';
 import Counter from './Counter';
+import { ThemeContextProvider } from './context/ThemeContext';
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>([
@@ -25,8 +26,10 @@ function App() {
 
     return (
         <>
-            <TodoList todos={todos} />
-            <Counter />
+            <ThemeContextProvider>
+                <TodoList todos={todos} />
+                <Counter />
+            </ThemeContextProvider>
         </>
     );
 }

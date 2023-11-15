@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react';
+import React, { useContext, useReducer } from 'react';
+import { themeContext } from './context/ThemeContext';
 
 type CounterType = {
     count: number;
@@ -8,6 +9,7 @@ type ActionType = {
     payload?: number;
 };
 const Counter = () => {
+    const { primary, secondary } = useContext(themeContext);
     const initialState = {
         count: 0,
     };
@@ -32,7 +34,12 @@ const Counter = () => {
     return (
         <div>
             counter : {state.count}
-            <button onClick={() => dispatch({ type: 'increment', payload: 1 })}>
+            <button
+                style={{
+                    color: primary.main,
+                }}
+                onClick={() => dispatch({ type: 'increment', payload: 1 })}
+            >
                 increment
             </button>
             <button
