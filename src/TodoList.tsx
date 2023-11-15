@@ -4,6 +4,7 @@ import Todo from './Todo';
 export type Todo = {
     id: number;
     title: string;
+    color:string
 };
 
 type TodoListProps = {
