@@ -1,6 +1,6 @@
 import './App.css';
-import TodoList, { Todo } from './TodoList';
-
+import TodoList from './TodoList';
+import { Todo } from './Todos.types';
 function App() {
     const todos: Todo[] = [
         {
