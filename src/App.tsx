@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import TodoList from './TodoList';
-import { Todo } from './Todos.types';
-import Counter from './Counter';
-import { ThemeContextProvider } from '../context/ThemeContext';
-import { AuthContextProvider } from '../context/AuthContext';
-import Header from './Header';
+import TodoList from './Components/TodoList';
+import { Todo } from './Components/Todos.types';
+import Counter from './Components/Counter';
+import { ThemeContextProvider } from './context/ThemeContext';
+import { AuthContextProvider } from './context/AuthContext';
+import Header from './Components/Header';
+import Icon from './Components/Icon';
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>([
@@ -29,9 +30,10 @@ function App() {
         <>
             <AuthContextProvider>
                 <ThemeContextProvider>
-                    <Header />
+                    {/* <Header />
                     <TodoList todos={todos} />
-                    <Counter />
+                    <Counter /> */}
+                    <Icon children='test Icon' png />
                 </ThemeContextProvider>
             </AuthContextProvider>
         </>
