@@ -1,13 +1,23 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
-import Test from './Test';
+import TodoList, { Todo } from './TodoList';
 
 function App() {
-    const [count, setCount] = useState(0);
+    const todos: Todo[] = [
+        {
+            id: 1,
+            title: 'ts',
+        },
+        {
+            id: 2,
+            title: 'js',
+        },
+        {
+            id: 3,
+            title: 'css',
+        },
+    ];
 
-    return <Test />;
+    return <TodoList todos={todos} />;
 }
 
 export default App;
